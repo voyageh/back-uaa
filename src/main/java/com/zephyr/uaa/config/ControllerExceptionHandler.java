@@ -1,7 +1,7 @@
 package com.zephyr.uaa.config;
 
 
-import com.zephyr.uaa.constant.ReturnCode;
+import com.zephyr.uaa.common.constant.ReturnCode;
 import com.zephyr.uaa.dto.ReturnResultDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.zephyr.uaa.constant.ReturnCode.RUNTIME_EXCEPTION;
-import static com.zephyr.uaa.constant.ReturnCode.VALIDATION_ERROR;
+import static com.zephyr.uaa.common.constant.ReturnCode.RUNTIME_EXCEPTION;
+import static com.zephyr.uaa.common.constant.ReturnCode.VALIDATION_ERROR;
 
 @RestControllerAdvice
 @Slf4j

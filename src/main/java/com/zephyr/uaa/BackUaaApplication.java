@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan("com.zephyr")//扫描路径,把符合扫描规则的类装配到spring容器中
-@MapperScan("com.zephyr.uaa.mapper")
 public class BackUaaApplication {
 
     public static void main(String[] args) {

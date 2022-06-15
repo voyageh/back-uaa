@@ -1,4 +1,4 @@
-package com.zephyr.uaa.constant;
+package com.zephyr.uaa.common.constant;
 
 public enum ReturnCode {
     SUCCESS("2000"),

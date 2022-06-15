@@ -1,5 +1,6 @@
 package com.zephyr.uaa.controller.user;
 
+import com.zephyr.uaa.dto.ReturnResultDTO;
 import com.zephyr.uaa.dto.request.base.CreateUserDTO;
 import com.zephyr.uaa.dto.request.base.LoginDTO;
 import com.zephyr.uaa.entity.base.User;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @Api(value = "user", tags = "用户管理")
 @RestController
@@ -34,9 +37,9 @@ public class UserController {
 
     @ApiOperation(value = "用户登录")
     @PostMapping("/login")
-    public String login(@RequestBody @Validated LoginDTO loginDTO) {
-        log.info("loginDTO", loginDTO);
-        return "mb6i2zhp";
+    public ReturnResultDTO<?> login(@RequestBody @Validated LoginDTO loginDTO) {
+        HashMap<String, Object> token = userService.login(loginDTO.getUserName(), loginDTO.getPassword());
+        return new ReturnResultDTO("200",token);
     }
 
     @GetMapping("/hello")
